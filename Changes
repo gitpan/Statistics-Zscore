@@ -1,0 +1,4 @@
+Revision history for Perl extension Statistics::Zscore
+
+0.00001  2008/08/15
+     - change the name space ( from 'Zscore' to 'Statistics::Zscore' ) 
