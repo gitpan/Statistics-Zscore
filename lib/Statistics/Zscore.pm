@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use Statistics::Lite qw(statshash);
 
-our $VERSION = '0.00001';
+our $VERSION = '0.00002';
 
 sub new {
     my $class = shift;
@@ -50,7 +50,7 @@ sub combine {
         }
         if($decimal){
             my $format = '%0.' . $decimal . 'f'; 
-            $score = sprintf( $decimal, $score );
+            $score = sprintf( $format, $score );
         }
         $result->{ $keys[$j] } = $score;
     }
@@ -91,7 +91,7 @@ Statistics::Zscore - Simple scoring module that uses statistics STANDARD SCORE.
 
   use Statistics::Zscore;
   
-  my $z = Zscore->new;
+  my $z = Statistics::Zscore->new;
   
   # This module calculates statistics STANDARD SCORE that is called 'z-score'. 
   # It returns array reference of z-score.
@@ -148,7 +148,7 @@ Statistics::Zscore is scoring module that uses statistics STANDARD SCORE.
 =head2 combine(\%hash)
 
   Receives hash reference, and returns z-score's hash refernce.
-  %hash includes 'scale' and 'plus' options.(see above)
+  %hash includes 'scale', 'plus' and decimal options.(see above)
 
 =head1 AUTHOR
 
